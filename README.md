@@ -1,4 +1,5 @@
-# 这是很久以前做的一个进销存的系统，建表语句我就增加到下面了
+# 这是很久以前做的一个进销存的系统，建表语句我就增加到下面了，数据库连接可以自己去修改conn.php内容
+```
 -- cms.chuku definition
 
 CREATE TABLE `chuku` (
@@ -16,6 +17,8 @@ CREATE TABLE `chuku` (
   `jine` double(15,2) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1731 DEFAULT CHARSET=utf8;
+```
+```
 -- cms.ruku definition
 
 CREATE TABLE `ruku` (
@@ -32,6 +35,8 @@ CREATE TABLE `ruku` (
   `beizhu` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4453 DEFAULT CHARSET=utf8;
+```
+```
 -- cms.jiecun definition
 
 CREATE TABLE `jiecun` (
@@ -46,6 +51,8 @@ CREATE TABLE `jiecun` (
   `zhongliang` double(15,2) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=324 DEFAULT CHARSET=utf8;
+```
+```
 -- cms.report definition
 
 CREATE TABLE `report` (
@@ -81,7 +88,8 @@ group by
     `chuku`.`dengji`,
     `chuku`.`dingzhong`,
     `chuku`.`jitai`;
-
+```
+```
 -- cms.jinxiaocunhuizong source
 
 create or replace
@@ -127,7 +135,8 @@ left join `rukuhuizong` `r2` on
                 and (`r2`.`jitai` = `c2`.`jitai`)
                     and (`r2`.`mingcheng` = `c2`.`mingcheng`)
                         and (`r2`.`riqi` = `c2`.`riqi`))));
-                        
+```
+```
 -- cms.rukuhuizong source
 
 create or replace
@@ -150,5 +159,5 @@ group by
     `ruku`.`dengji`,
     `ruku`.`dingzhong`,
     `ruku`.`jitai`;
-
+```
 
